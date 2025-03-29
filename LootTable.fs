@@ -2,16 +2,11 @@ module DropCalculator.LootTable
 
 open System.IO
 open FSharp.Data
-open FSharpx.Result
+open FSharpx
 open FParsec
+open Helpers
 
 type LootTableSchema = JsonProvider<Schema="format.json">
-
-let (|=>) a p = a |>> fun _ -> p
-
-let ws = spaces
-
-let num: Parser<int, 'a> = pint32
 
 type Amount =
     | Dice of count: int * sides: int
@@ -215,19 +210,8 @@ type LootTable =
 
 let test = run Hoard.parser
 
-let parse parser =
-    run parser
-    >> function
-        | Failure(msg, _err, _) -> Result.Error msg
-        | Success(result, _, _) -> Result.Ok result
-
-let parseMany parser = List.map (parse parser) >> sequence
-
 let fromString s =
-
-    let result = ResultBuilder()
-
-    result {
+    Result.result {
         let JsonTable = LootTableSchema.Parse s
         let! harvest = JsonTable.Harvest |> Array.toList |> parseMany Harvest.parser
 
@@ -264,5 +248,6 @@ let load () =
 
     Directory.EnumerateFiles folder
     |> List.ofSeq
-    |> List.map (fun file -> file, File.ReadAllText file |> fromString)
-    |> Map.ofList
+    |> List.map (fun file -> File.ReadAllText file |> fromString |> Result.map (fun table -> (file, table)))
+    |> Result.sequence
+    |> Result.map Map.ofList
