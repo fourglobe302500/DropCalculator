@@ -1,0 +1,66 @@
+﻿{
+  "$schema": "../format.json",
+  "harvest": [
+    "DC 5 (1) 'Hobgoblin Ear' 2sp"
+  ],
+  "loot": {
+    "roll": "d100",
+    "table": [
+      "01-30 (5d6) cp",
+      "31-60 (4d6) sp",
+      "61-70 (3d6) ep",
+      "71-95 (3d6) gp",
+      "96-100 (1d6) pp"
+    ]
+  },
+  "hoard": {
+    "money": [
+      "6d6 * 100 cp",
+      "3d6 * 100 sp",
+      "2d6 * 10 gp"
+    ],
+    "roll": "d100",
+    "table": [
+      "01-06| - | -",
+      "07-16| (2d6)~10gp~gems| - ",
+      "17-26| (2d4)~25gp~art| - ",
+      "27-36| (2d6)~50gp~gems| - ",
+      "37-44| (2d6)~10gp~gems| (1d6)MITA",
+      "45-52| (2d4)~25gp~art| (1d6)MITA",
+      "53-60| (2d6)~50gp~gems| (1d6)MITA",
+      "61-65| (2d6)~10gp~gems| (1d6)MITB",
+      "66-70| (2d4)~25gp~art| (1d6)MITB",
+      "71-75| (2d6)~50gp~gems| (1d6)MITB",
+      "76-78| (2d6)~10gp~gems| (1d6)MITC",
+      "79-80| (2d4)~25gp~art| (1d6)MITC",
+      "81-85| (2d6)~50gp~gems| (1d6)MITC",
+      "86-92| (2d4)~25gp~art| (1d6)MITF",
+      "93-97| (2d6)~50gp~gems| (1d6)MITF",
+      "98-99| (2d4)~25gp~art| (1d6)MITG",
+      "100  | (2d6)~50gp~gems| (1d6)MITG"
+    ]
+  },
+  "equipment": [
+    "1 'Longsword'",
+    "1 'Longbow'",
+    "1d6 'Arrows'",
+    "1 'Quiver'",
+    "1 'Shield'",
+    "1 'Chain Mail'"
+  ],
+  "trinkets": [
+    "1 thin rope threaded through several elf ears",
+    "1 bent signal whistle (unusable)",
+    "1 crudely drawn battle map detailing an attack plan",
+    "1 crude wood carving of a warrior",
+    "1 pouch of several chess pieces",
+    "1 pouch of jewelry (stolen)",
+    "1 stone medallion engraved with a bloody axe (symbol of Maglubiyet)",
+    "1 pouch of chewing tobacco",
+    "1 parchment outlining a troop schedule and regimen",
+    "1 human skull carved into a flagon",
+    "1d4 dried meat ration(s)",
+    "1d4 small animal carcass(es)"
+  ],
+  "meat": "inedible"
+}
