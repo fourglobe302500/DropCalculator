@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Goblin",
+    "loot": [
+      {
+        "DC": 5,
+        "nome": "Goblin Ear",
+        "value": "5cp",
+        "itemType": "Ears",
+        "amount": 2
+      }
+    ],
+    "CR": 0.25,
+    "size": "small",
+    "type": "humanoids"
+  },
+  {
+    "nome": "Hobgoblin",
+    "size": "medium",
+    "type": "humanoids",
+    "CR": 0.5,
+    "loot": [
+      {
+        "nome": "Hobgoblin Ear",
+        "itemType": "Ears",
+        "DC": 5,
+        "value": "2sp",
+        "amount": 2
+      }
+    ]
+  }
+]

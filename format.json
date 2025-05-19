@@ -2,98 +2,102 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Drop Table",
   "description": "The loot table of a mob",
-  "type": "object",
-  "properties": {
-    "harvest": {
-      "description": "The things that can be harvested from the mob",
-      "type": "array",
-      "items": {
-        "description": "A singular harvestable item",
-        "type": "string",
-        "pattern": "^(DC\\s*[0-9]+)\\s*\\(((?:[0-9]*d[0-9]+|[0-9]+)(?:\\s*(?:[+\\-*])\\s*(?:[0-9]*d[0-9]+|[0-9]+))*)\\s*\\)\\s*'([^-]*)'\\s*(\\d+(?:cp|sp|ep|gp|pp))$"
-      }
-    },
-    "loot": {
-      "description": "The gold that the mob drops",
-      "type": "object",
-      "properties": {
-        "roll": {
-          "type": "string",
-          "pattern": "^([0-9]*d[0-9]+)$"
-        },
-        "table": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^([0-9]+(?:-[0-9]+)?)\\s*\\(((?:[0-9]*d[0-9]|[0-9]+)+(?:\\s*[+\\-*]\\s*(?:[0-9]+|[0-9]*d[0-9]+))*)\\)\\s*(cp|sp|ep|gp|pp)$"
-          }
-        }
-      },
-      "required": [
-        "roll",
-        "table"
-      ]
-    },
-    "hoard": {
-      "description": "The loot table from a high level mob or boss",
-      "type": "object",
-      "properties": {
-        "money": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^([0-9]*d[0-9]+|[0-9]+)(\\s*([+\\-*])\\s*([0-9]*d[0-9]+|[0-9]+))*\\s*(cp|sp|ep|gp|pp)$"
-          }
-        },
-        "roll": {
-          "description": "The dice that must be rolled for the drop table",
-          "type": "string",
-          "pattern": "^([0-9]*d[0-9]+)$"
-        },
-        "table": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "pattern": "^([0-9]+(?:-[0-9]+)?\\s*)\\|(?:\\s*(-|\\([0-9]*d[0-9]+\\)~[0-9]+(?:cp|sp|ep|gp|pp)~(?:gems|art))\\s*)\\|(?:\\s*(-|\\([0-9]*d[0-9]+\\)MIT[A-I])\\s*)$"
-          }
-        }
-      },
-      "required": [
-        "table",
-        "roll",
-        "money"
-      ]
-    },
-    "equipment": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "pattern": "^((?:[0-9]*d[0-9]|[0-9]+)+(?:\\s*[+\\-*]\\s*(?:[0-9]+|[0-9]*d[0-9]+))*)\\s*('[^']*')$"
-      }
-    },
-    "trinkets": {
-      "type": "array",
-      "items": {
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "nome": {
         "type": "string"
+      },
+      "CR": {
+        "type": "number",
+        "minimum": 0.25
+      },
+      "size": {
+        "type": "string",
+        "enum": [
+          "tiny",
+          "small",
+          "medium",
+          "large",
+          "huge",
+          "gargantuan"
+        ]
+      },
+      "type": {
+        "type": "string",
+        "enum": [
+          "humanoids",
+          "monstrosities",
+          "dragons",
+          "giants",
+          "undead",
+          "aberrations",
+          "fiends",
+          "celestials",
+          "fey",
+          "elementals",
+          "constructs",
+          "oozes",
+          "plants",
+          "beasts"
+        ]
+      },
+      "loot": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "DC": {
+              "type": "number",
+              "minimum": 1
+            },
+            "nome": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*[csegp]p$"
+            },
+            "amount": {
+              "type": "number",
+              "minimum": 1
+            },
+            "itemType": {
+              "type": "string",
+              "enum": [
+                "Body Part",
+                "Bones",
+                "Feather",
+                "Ears",
+                "Hair",
+                "Head",
+                "Hide/Pelt",
+                "Liquid",
+                "Poisons",
+                "Marks/Tattoos",
+                "Wings"
+              ]
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "DC",
+            "amount",
+            "nome",
+            "value",
+            "itemType"
+          ]
+        }
       }
     },
-    "meat": {
-      "enum": [
-        "tiny",
-        "small",
-        "medium",
-        "large",
-        "huge",
-        "gargantuan",
-        "inedible"
-      ]
-    }
-  },
-  "required": [
-    "harvest",
-    "loot",
-    "hoard",
-    "equipment",
-    "meat"
-  ]
+    "additionalProperties": false,
+    "required": [
+      "nome",
+      "CR",
+      "size",
+      "type",
+      "loot"
+    ]
+  }
 }
