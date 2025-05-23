@@ -10,8 +10,8 @@
         "type": "string"
       },
       "CR": {
-        "type": "number",
-        "minimum": 0.25
+        "type": "string",
+        "pattern": "^(?:1/4|1/2|[0-9]+)$"
       },
       "size": {
         "type": "string",
