@@ -33,7 +33,7 @@
     "type": "dragons",
     "nome": "Young White Dragon",
     "size": "large",
-    "CR": "6",
+    "CR": 6,
     "loot": [
       {
         "nome": "Young Dragon Blood",

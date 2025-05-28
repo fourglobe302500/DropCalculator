@@ -1,5 +1,6 @@
 ﻿namespace DropCalculator
 
+open System
 open System.IO
 open FParsec
 open FSharpx
@@ -32,7 +33,7 @@ module LootTable =
 
     let nameParser lootTable =
         [ yield! lootTable |> List.map (fun m -> pstring (m.Name.ToLower()) >>% Result.Ok m)
-          yield many1Chars anyChar |>> InvalidName |>> Result.Error ]
+          yield many1Satisfy (not << Char.IsWhiteSpace) |>> InvalidName |>> Result.Error ]
         |> choice
 
     let parseRoot (root: LootTableSchema.Root) =
