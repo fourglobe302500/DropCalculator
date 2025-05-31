@@ -31,8 +31,20 @@ module LootTable =
             | InvalidName s ->
                 $"LootTable: Invalid name '{s}' it's not on the list of creatures. Use 'list' to see valid names."
 
+    let endOfName (stream: CharStream) =
+        let error = ErrorMessageList <| ErrorMessage.Other "Expected end of String"
+
+        if
+            stream.IsEndOfStream
+            || Char.IsWhiteSpace <| stream.Peek()
+            || Char.IsDigit <| stream.Peek()
+        then
+            Reply(true)
+        else
+            Reply(ReplyStatus.Error, error)
+
     let nameParser lootTable =
-        [ yield! lootTable |> List.map (fun m -> pstring (m.Name.ToLower()) >>% Result.Ok m)
+        [ for mob in lootTable -> pstring <| mob.Name.ToLower() .>>? endOfName >>% Result.Ok mob
           yield many1Satisfy (not << Char.IsWhiteSpace) |>> InvalidName |>> Result.Error ]
         |> choice
 

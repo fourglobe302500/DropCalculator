@@ -56,7 +56,7 @@ module Command =
         >>. catchFail (MissingArgument "kill must have at least one mob") spaces1
         >>= onOk (
             many (
-                LootTable.nameParser lootTable .>> spaces .>>. opt puint32
+                LootTable.nameParser lootTable .>> spaces .>>. opt puint32 .>> spaces
                 |>> (fun (name, value) -> Result.map <| (flip tuple2 << Option.getOrElse 1u <| value) <| name)
                 |>> Result.mapError LootTableError
             )
@@ -70,7 +70,8 @@ module Command =
         <|> (many1Chars anyChar |>> fun s -> Result.Error <| [ UnknownCommand s ])
 
     let parse lootTable : string -> Result<Command, ParserError list> =
-        run <| parser lootTable
+        String.replace '_' ' '
+        >> run (parser lootTable)
         >> function
             | Failure(e, _, _) -> failwith $"Unknown Error {e}"
             | Success(r, _, _) -> r
