@@ -8,6 +8,7 @@ type Command =
     | Kill of (LootTable * uint) list
     | Exit
     | List
+    | NOP
 
 [<RequireQualifiedAccess>]
 module Command =
@@ -67,6 +68,7 @@ module Command =
     let parser lootTable : Parser<Result<Command, ParserError list>, _> =
         (choice [ parseList; parseExit; parseHoard lootTable; parseKill lootTable ]
          .>> eof)
+        <|> (eof >>% Result.Ok NOP)
         <|> (many1Chars anyChar |>> fun s -> Result.Error <| [ UnknownCommand s ])
 
     let parse lootTable : string -> Result<Command, ParserError list> =

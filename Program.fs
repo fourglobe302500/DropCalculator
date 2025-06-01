@@ -27,6 +27,7 @@ let main _ =
                         
                 | Result.Ok command ->
                     match command with
+                    | NOP -> ()
                     | List -> lootTable |> List.map LootTable.name |> List.iter (printfn "%s")
                     | Exit -> running <- false
                     | Hoard m -> printfn $"Get Hoard for {m.Name} with CR {m.CR}"
