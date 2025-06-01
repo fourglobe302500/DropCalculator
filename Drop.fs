@@ -21,7 +21,7 @@ module Drop =
             | CoinTypeParseError err -> $"Drop->{err}"
             | DropTypeParseError err -> $"Drop->{err}"
 
-    let parse (root: LootTableSchema.Record) =
+    let parse (root: LootTableSchema.Record2) =
         Result.result {
             let name = root.Nome
             let! dropType = DropType.parse root.ItemType |> Result.mapError ParseError.DropTypeParseError

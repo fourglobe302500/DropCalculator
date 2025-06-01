@@ -24,6 +24,13 @@ module CR =
             let (InvalidCR cr) = this
             $"CR: '{cr}' is a invalid cr"
 
+    let (|Between|_|) lower upper value =
+        match value with
+        | Half
+        | Eigth
+        | Quarter -> lower = 0u && 1u <= upper
+        | Whole n -> lower <= n && n <= upper
+
     let parse =
         function
         | "1/4" -> Ok Quarter

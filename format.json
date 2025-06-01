@@ -89,6 +89,41 @@
             "itemType"
           ]
         }
+      },
+      "carrying": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "nome": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "string",
+              "pattern": "^[0-9]*d?[0-9]+$"
+            },
+            "baseValue": {
+              "type": "string",
+              "pattern": "^[1-9][0-9]*[csegp]p$"
+            },
+            "rarity": {
+              "type": "string",
+              "enum": [
+                "Common",
+                "Uncommon",
+                "Rare",
+                "VeryRare",
+                "Legendary"
+              ]
+            }
+          },
+          "required": [
+            "nome",
+            "baseValue",
+            "amount"
+          ]
+        }
       }
     },
     "additionalProperties": false,
@@ -97,7 +132,8 @@
       "CR",
       "size",
       "type",
-      "loot"
+      "loot",
+      "carrying"
     ]
   }
 }

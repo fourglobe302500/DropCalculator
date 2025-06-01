@@ -13,6 +13,8 @@
         <Compile Include="DropType.fs"/>
         <Compile Include="CoinType.fs"/>
         <Compile Include="Drop.fs"/>
+        <Compile Include="Item.fs"/>
+        <Compile Include="RandomMagicTable.fs"/>
         <Compile Include="LootTable.fs"/>
         <Compile Include="Command.fs"/>
         <Compile Include="Program.fs"/>

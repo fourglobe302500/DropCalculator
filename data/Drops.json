@@ -12,7 +12,34 @@
     ],
     "CR": "1/4",
     "size": "small",
-    "type": "humanoids"
+    "type": "humanoids",
+    "carrying": [
+      {
+        "nome": "Scimitar",
+        "amount": "1",
+        "baseValue": "25gp"
+      },
+      {
+        "nome": "Short-bow",
+        "amount": "1",
+        "baseValue": "25gp"
+      },
+      {
+        "nome": "Arrow",
+        "baseValue": "1gp",
+        "amount": "d6"
+      },
+      {
+        "nome": "Leather Armor",
+        "amount": "1",
+        "baseValue": "10gp"
+      },
+      {
+        "nome": "Shield",
+        "amount": "1",
+        "baseValue": "10gp"
+      }
+    ]
   },
   {
     "nome": "Hobgoblin",
@@ -27,13 +54,46 @@
         "value": "2sp",
         "amount": 2
       }
+    ],
+    "carrying": [
+      {
+        "nome": "Longsword",
+        "baseValue": "15gp",
+        "amount": "1"
+      },
+      {
+        "nome": "Longbow",
+        "amount": "1",
+        "baseValue": "50gp"
+      },
+      {
+        "nome": "Arrow",
+        "baseValue": "1gp",
+        "amount": "d6"
+      },
+      {
+        "nome": "Quiver",
+        "baseValue": "1gp",
+        "amount": "1"
+      },
+      {
+        "nome": "Chain Mail",
+        "amount": "1",
+        "baseValue": "75gp"
+      },
+      {
+        "nome": "Shield",
+        "amount": "1",
+        "baseValue": "10gp"
+      }
     ]
   },
   {
     "type": "dragons",
     "nome": "Young White Dragon",
     "size": "large",
-    "CR": 6,
+    "CR": "6",
+    "carrying": [],
     "loot": [
       {
         "nome": "Young Dragon Blood",
