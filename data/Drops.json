@@ -10,15 +10,42 @@
         "amount": 2
       }
     ],
-    "CR": 0.25,
+    "CR": "1/4",
     "size": "small",
-    "type": "humanoids"
+    "type": "humanoids",
+    "carrying": [
+      {
+        "nome": "Scimitar",
+        "amount": "1",
+        "baseValue": "25gp"
+      },
+      {
+        "nome": "Short-bow",
+        "amount": "1",
+        "baseValue": "25gp"
+      },
+      {
+        "nome": "Arrow",
+        "baseValue": "1gp",
+        "amount": "d6"
+      },
+      {
+        "nome": "Leather Armor",
+        "amount": "1",
+        "baseValue": "10gp"
+      },
+      {
+        "nome": "Shield",
+        "amount": "1",
+        "baseValue": "10gp"
+      }
+    ]
   },
   {
     "nome": "Hobgoblin",
     "size": "medium",
     "type": "humanoids",
-    "CR": 0.5,
+    "CR": "1/2",
     "loot": [
       {
         "nome": "Hobgoblin Ear",
@@ -26,6 +53,96 @@
         "DC": 5,
         "value": "2sp",
         "amount": 2
+      }
+    ],
+    "carrying": [
+      {
+        "nome": "Longsword",
+        "baseValue": "15gp",
+        "amount": "1"
+      },
+      {
+        "nome": "Longbow",
+        "amount": "1",
+        "baseValue": "50gp"
+      },
+      {
+        "nome": "Arrow",
+        "baseValue": "1gp",
+        "amount": "d6"
+      },
+      {
+        "nome": "Quiver",
+        "baseValue": "1gp",
+        "amount": "1"
+      },
+      {
+        "nome": "Chain Mail",
+        "amount": "1",
+        "baseValue": "75gp"
+      },
+      {
+        "nome": "Shield",
+        "amount": "1",
+        "baseValue": "10gp"
+      }
+    ]
+  },
+  {
+    "type": "dragons",
+    "nome": "Young White Dragon",
+    "size": "large",
+    "CR": "6",
+    "carrying": [],
+    "loot": [
+      {
+        "nome": "Young Dragon Blood",
+        "amount": 5,
+        "value": "125gp",
+        "DC": 10,
+        "itemType": "Liquid"
+      },
+      {
+        "nome": "Young Dragon Tooth",
+        "amount": 10,
+        "value": "25gp",
+        "DC": 15,
+        "itemType": "Bones"
+      },
+      {
+        "nome": "Young Dragon Bone",
+        "amount": 6,
+        "value": "350gp",
+        "DC": 15,
+        "itemType": "Bones"
+      },
+      {
+        "nome": "Young White Dragon Horn",
+        "amount": 1,
+        "value": "650gp",
+        "DC": 15,
+        "itemType": "Bones"
+      },
+      {
+        "nome": "Young White Dragon Scales",
+        "amount": 1,
+        "value": "1600gp",
+        "DC": 20,
+        "itemType": "Bones"
+      },
+      {
+        "nome": "Young White Dragon Breath Pouch",
+        "amount": 1,
+        "value": "1500gp",
+        "DC": 20,
+        "itemType": "Body Part"
+      },
+      {
+        "nome": "Young White Dragon Wings",
+        "amount": 2,
+        "value": "3000gp",
+        "DC": 20,
+        "itemType": "Wings"
       }
     ]
   }

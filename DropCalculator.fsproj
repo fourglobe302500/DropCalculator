@@ -5,6 +5,18 @@
         <TargetFramework>net9.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="LootTableShema.fs"/>
+        <Compile Include="Extra.fs"/>
+        <Compile Include="Size.fs"/>
+        <Compile Include="CreatureType.fs"/>
+        <Compile Include="CR.fs"/>
+        <Compile Include="DropType.fs"/>
+        <Compile Include="CoinType.fs"/>
+        <Compile Include="Drop.fs"/>
+        <Compile Include="Item.fs"/>
+        <Compile Include="RandomMagicTable.fs"/>
+        <Compile Include="LootTable.fs"/>
+        <Compile Include="Command.fs"/>
         <Compile Include="Program.fs"/>
         <Content Include="format.json"/>
     </ItemGroup>
