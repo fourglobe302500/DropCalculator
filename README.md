@@ -2,7 +2,7 @@
 
 A basic program made for rolling drop tables for RPG mobs and hoards (D&D).
 
-All data is stored [here](data\Drops.json). With the format defined [here](format.json)
+All data is stored [here](data/Drops.json). With the format defined [here](format.json)
 
 ## The commands currently implemented are:
 
